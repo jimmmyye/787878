@@ -129,9 +129,11 @@
   <ItemGroup>
     <ClCompile Include="Grade-Management-System.cpp" />
     <ClCompile Include="Student.cpp" />
+    <ClCompile Include="StudentManage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Student.h" />
+    <ClInclude Include="StudentManage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
