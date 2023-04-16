@@ -3,16 +3,18 @@
 #include<iostream>
 using namespace std;
 #include<vector>
+#include<algorithm>
+#include<iomanip>
 #include "Student.h"
 class StudentManage{
 private:
 	vector <Student> students;
 public:
 	void AddStudent();
-	void DisplayAllStudent();
-	void DisplayOneStudent();
+	void FindStudent();
 	void ModifyStudent();
 	void DeleteStudent();
-	void FindStudent();
+	void DisplayAllStudent();
+	
 };
 #endif

@@ -43,3 +43,4 @@ double Student::getAverage() const{
     return (Math + English) / 2.0;
 }
 
+

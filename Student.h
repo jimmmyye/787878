@@ -19,5 +19,6 @@ public:
     double getEnglish() const;
     double getSum() const;
     double getAverage() const;
+
 };
 #endif
