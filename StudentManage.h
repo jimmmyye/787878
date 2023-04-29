@@ -9,12 +9,17 @@ using namespace std;
 class StudentManage{
 private:
 	vector <Student> students;
+	string <student> filename;
 public:
+	StudentMange(string frame);
 	void AddStudent();
 	void FindStudent();
 	void ModifyStudent();
 	void DeleteStudent();
+	void SortStudent();
 	void DisplayAllStudent();
+	void SaveDate();
+	void Run();
 	
 };
 #endif

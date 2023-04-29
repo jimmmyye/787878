@@ -1,4 +1,7 @@
 #include "StudentManage.h"
+void StudentManage::StudentManage(string frame){
+	
+}
 void StudentManage::AddStudent() {
 	cout << "請輸入學生姓名、座號、數學成績、英文成績:";
 	std::string name, id;
@@ -38,8 +41,9 @@ void StudentManage::ModifyStudent() {
 void StudentManage::DeleteStudent() {
 
 }
-
-
+void StudentManage::SortStudent(){
+	
+}
 void StudentManage::DisplayAllStudent() {
 	vector <Student> temp = students;
 	sort(temp.begin(), temp.end(), [](Student a, Student b) {return a.getSum() > b.getSum();});
@@ -51,7 +55,12 @@ void StudentManage::DisplayAllStudent() {
 		cout << "|" << left << setw(10) << i + 1 << "|" << endl;
 	}
 }
-
+void StudentManage::SaveDate(){
+	
+}
+void StudentManage::Run(){
+	
+}
 
 
 
