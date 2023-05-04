@@ -9,7 +9,7 @@ using namespace std;
 class StudentManage{
 private:
 	vector <Student> students;
-	string <student> filename;
+	string filename;
 public:
 	StudentMange(string frame);
 	void AddStudent();

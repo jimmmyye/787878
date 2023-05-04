@@ -1,5 +1,5 @@
 #include "StudentManage.h"
-void StudentManage::StudentManage(string frame){
+StudentManage::StudentManage(string frame){
 	
 }
 void StudentManage::AddStudent() {
