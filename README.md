@@ -16,9 +16,14 @@
 5. <font color = red>顯示學生</font>: 顯示全部的學生成績。
 6. <font color = red>退出系統</font>: 把輸入的資料全部存入檔案，退出。
 ## <b>程式碼如何安裝執行:</b>
+### 下載檔案然後執行
 ## <b>程式碼執行方式:</b>
+### 截圖的第一張圖片是輸入1跟輸入5的執行畫面，也就是增加學生，跟顯示學生的畫面，輸入1完接著輸入姓名學號，各科分數，還有其他2,3,4可以讓使用者選擇，1~5都沒要選了輸入6退出系統，系統會把剛操作的資料全部存進名叫Student的txt檔。
+### 第二張是該檔案儲存的內容。
+
 ## <b>程式畫面截圖:</b>
 ![Alt text](https://github.com/jimmyye1118/Grade-Management-System/blob/master/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202023-05-20%20130825.png)
+![Alt text](https://github.com/jimmyye1118/Grade-Management-System/blob/master/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202023-05-20%20134713.png)
 ## <b>分工資訊:</b>
 ### Student.cpp,h 謝昊君，陳任璿
 ### StudentManage.cpp.h 葉易峻
