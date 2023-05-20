@@ -6,6 +6,8 @@ using namespace std;
 #include<algorithm>
 #include<iomanip>
 #include<fstream>
+#include<iostream>
+using namespace std;
 #include "Student.h"
 class StudentManage{
 private:

@@ -1,4 +1,2 @@
 ﻿  StudentManage.cpp
-C:\Users\jimmy\source\repos\Grade-Management-System\StudentManage.cpp(64,6): warning C4101: 'MathScore': 未參考的區域變數
-C:\Users\jimmy\source\repos\Grade-Management-System\StudentManage.cpp(64,17): warning C4101: 'EnglishScore': 未參考的區域變數
   物件導向專題.vcxproj -> C:\Users\jimmy\source\repos\Grade-Management-System\x64\Debug\物件導向專題.exe

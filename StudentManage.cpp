@@ -1,6 +1,20 @@
 #include "StudentManage.h"
 StudentManage::StudentManage(string fname){
-	
+	filename = fname;
+	fstream file(filename,ios::in);
+	if (file.is_open()) {
+		string line, wh,eline;
+		getline(file, line);
+		getline(file, wh);
+		string name, id;
+		int math, english,rank;
+		while (file >> name >> id >> math >> english>>rank) {
+			Student s(name, id, math, english);
+			students.push_back(s);
+		}
+		getline(file, eline);
+		file.close();
+	}
 }
 void StudentManage::AddStudent() {
 	cout << "請輸入要增加的學生姓名、學號、數學成績、英文成績:";
@@ -60,8 +74,7 @@ void StudentManage::ModifyStudent() {
 
 void StudentManage::DeleteStudent() {
 	bool find = false;
-	string name, id;
-	int MathScore, EnglishScore;
+	string name;
 
 	cout << "請輸入要刪除的學生姓名: ";
 	cin >> name;
@@ -80,30 +93,58 @@ void StudentManage::SortStudent(){
 	sort(students.begin(), students.end(), [](Student a, Student b) {return a.getSum() > b.getSum(); });
 }
 void StudentManage::DisplayAllStudent() {
-	for (int i = 0; i < 64; i++) {
+	for (int i = 0; i < 66; i++) {
 		cout << "-";
 	}
 	cout << endl;
-	cout << "|" << setw(7) << "姓名" << setw(4);
+	cout << "|" << setw(8) << "姓名" << setw(6);
 	cout << "|" << setw(11) << "學號" << setw(8);
 	cout << "|" << setw(7) << "數學" << setw(4);
 	cout << "|" << setw(7) << "英文" << setw(4);
 	cout << "|" << setw(7) << "排名" << setw(4) << "|";
 	cout << endl;
 	for (int i = 0; i < students.size(); i++) {
-		cout << "|" << left << setw(10) << students[i].getName();
+		cout << "|" << left << setw(13) << students[i].getName();
 		cout << "|" << left << setw(18) << students[i].getID();
 		cout << "|" << left << setw(10) << students[i].getEnglish();
 		cout << "|" << left << setw(10) << students[i].getMath();
 		cout << "|" << left << setw(10) << i + 1 << "|" << endl;
 	}
-	for (int i = 0; i < 64; i++) {
+	for (int i = 0; i < 66; i++) {
 		cout << "-";
 	}
 	cout << endl;
 }
 void StudentManage::SaveData(){
-	
+	fstream file(filename,ios::out);
+	if (file.is_open()) {
+		for (int i = 0; i < 62; i++) {
+			file << "-";
+		}
+		file << endl;
+		file << "|" << setw(7) << "姓名" << setw(6);
+		file << "|" << setw(9) << "學號" << setw(6);
+		file << "|" << setw(7) << "數學" << setw(4);
+		file << "|" << setw(7) << "英文" << setw(4);
+		file << "|" << setw(7) << "排名" << setw(4) << "|";
+		file << endl;
+		for (int i = 0; i < students.size(); i++) {
+			file << left << setw(14) << students[i].getName();
+			file << left << setw(14) << students[i].getID() << " ";
+			file << left << setw(10) << students[i].getMath() << " ";
+			file << left << setw(10) << students[i].getEnglish() <<" ";
+			file << left << setw(10) << i + 1 << endl;
+		}
+		for (int i = 0; i < 62; i++) {
+			file << "-";
+		}
+
+		cout << "已保存 " << students.size() << " 名學生資料。" << endl;
+		file.close();
+	}
+	else {
+		cout << "無法開啟文件！" << endl;
+	}
 }
 void StudentManage::Run(){
 	cout << "-------------歡迎來到成績管理系統-----------------" << endl;
@@ -136,6 +177,7 @@ void StudentManage::Run(){
 			break;
 		case 6:
 			SaveData();
+			return;
 			break;
 		default:
 			break;
