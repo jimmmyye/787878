@@ -15,15 +15,11 @@
 4. <font color = red>刪除學生</font>: 輸入名字，告訴系統需要刪除哪位學生的成績，然後刪除。
 5. <font color = red>顯示學生</font>: 顯示全部的學生成績。
 6. <font color = red>退出系統</font>: 把輸入的資料全部存入檔案，退出。
-
-
-
-
-
-
-
-
 ## <b>程式碼如何安裝執行:</b>
 ## <b>程式碼執行方式:</b>
 ## <b>程式畫面截圖:</b>
+![Alt text](https://github.com/jimmyye1118/Grade-Management-System/blob/master/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202023-05-20%20130825.png)
 ## <b>分工資訊:</b>
+### Student.cpp,h 謝昊君，陳任璿
+### StudentManage.cpp.h 葉易峻
+### main.cpp,README.md 三人一起
