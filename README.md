@@ -21,3 +21,7 @@
 ## <b>程式畫面截圖:</b>
 ![Alt text](https://github.com/jimmyye1118/Grade-Management-System/blob/master/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202023-05-20%20130810.png)
 ![Alt text](https://github.com/jimmyye1118/Grade-Management-System/blob/master/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202023-05-21%20195329.png)
+## <b>分工資訊:</b>
+### Student.h&cpp檔 謝昊君、陳任璿
+### StudentManage.h&cpp檔 謝昊君、陳任璿、葉易峻
+### main.cpp 葉易峻
