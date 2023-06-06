@@ -1,14 +1,13 @@
 #ifndef StudentManage_H
 #define StudentManage_H
 #include<iostream>
-using namespace std;
 #include<vector>
 #include<algorithm>
 #include<iomanip>
 #include<fstream>
 #include<iostream>
-using namespace std;
 #include "Student.h"
+using namespace std;
 class StudentManage {
 private:
 	vector <Student> students;
