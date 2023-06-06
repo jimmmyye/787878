@@ -1,5 +1,15 @@
 ﻿  Grade-Management-System.cpp
   Student.cpp
   StudentManage.cpp
+C:\Users\jimmy\source\repos\Grade-Management-System\StudentManage.cpp(1,1): warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+C:\Users\jimmy\source\repos\Grade-Management-System\StudentManage.cpp(28,32): error C2001: 常數中包含新行字元
+C:\Users\jimmy\source\repos\Grade-Management-System\StudentManage.cpp(29,1): error C2143: 語法錯誤: 遺漏 ';' (在 '}' 之前)
+C:\Users\jimmy\source\repos\Grade-Management-System\StudentManage.cpp(68,52): error C2001: 常數中包含新行字元
+C:\Users\jimmy\source\repos\Grade-Management-System\StudentManage.cpp(69,4): error C2146: 語法錯誤: 遺漏 ';' (在識別項 'find' 之前)
+C:\Users\jimmy\source\repos\Grade-Management-System\StudentManage.cpp(86,34): error C2001: 常數中包含新行字元
+C:\Users\jimmy\source\repos\Grade-Management-System\StudentManage.cpp(87,4): error C2146: 語法錯誤: 遺漏 ';' (在識別項 'find' 之前)
+C:\Users\jimmy\source\repos\Grade-Management-System\StudentManage.cpp(149,47): error C2001: 常數中包含新行字元
+C:\Users\jimmy\source\repos\Grade-Management-System\StudentManage.cpp(150,3): error C2146: 語法錯誤: 遺漏 ';' (在識別項 'file' 之前)
+C:\Users\jimmy\source\repos\Grade-Management-System\StudentManage.cpp(153,11): error C2001: 常數中包含新行字元
+C:\Users\jimmy\source\repos\Grade-Management-System\StudentManage.cpp(154,2): error C2143: 語法錯誤: 遺漏 ';' (在 '}' 之前)
   正在產生程式碼...
-  物件導向專題.vcxproj -> C:\Users\jimmy\source\repos\Grade-Management-System\x64\Debug\物件導向專題.exe

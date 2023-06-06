@@ -1,14 +1,15 @@
 #ifndef StudentManage_H
 #define StudentManage_H
 #include<iostream>
+using namespace std;
 #include<vector>
 #include<algorithm>
 #include<iomanip>
 #include<fstream>
 #include<iostream>
-#include "Student.h"
 using namespace std;
-class StudentManage{
+#include "Student.h"
+class StudentManage {
 private:
 	vector <Student> students;
 	string filename;
@@ -22,6 +23,6 @@ public:
 	void DisplayAllStudent();
 	void SaveData();
 	void Run();
-	
+
 };
 #endif

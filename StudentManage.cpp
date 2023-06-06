@@ -1,17 +1,16 @@
 #include "StudentManage.h"
-StudentManage::StudentManage(string fname){
+StudentManage::StudentManage(string fname) {
 	filename = fname;
-	// 嘗試打開指定的檔案以供讀取
-	fstream file(filename,ios::in);
+	fstream file(filename, ios::in);
 	if (file.is_open()) {
-		string line, wh,eline;
+		string line, wh, eline;
 		getline(file, line);
 		getline(file, wh);
 		char s;
 		string name, id;
-		int math, english,rank;
+		int math, english, rank;
 		int sum;
-		while (file >> s >> name >> s >> id >> s >> math >> s >> english >> s >> sum >> s >>rank >> s) {
+		while (file >> s >> name >> s >> id >> s >> math >> s >> english >> s >> sum >> s >> rank >> s) {
 			Student s(name, id, math, english);
 			students.push_back(s);
 		}
@@ -19,8 +18,6 @@ StudentManage::StudentManage(string fname){
 		file.close();
 	}
 }
-
-//增加學生
 void StudentManage::AddStudent() {
 	cout << "請輸入要增加的學生姓名、學號、數學成績、英文成績:";
 	string name, id;
@@ -28,18 +25,18 @@ void StudentManage::AddStudent() {
 	cin >> name >> id >> MathScore >> EnglishScore;
 	Student stu(name, id, MathScore, EnglishScore);
 	students.push_back(stu);
-	cout << "學生 " << name << " 已添加。"<<endl;
+	cout << "學生 " << name << " 已添加。" << endl;
 }
 
-//查詢學生
+
 void StudentManage::FindStudent() {
 	bool find = false;
 	string name;
 	cout << "請輸入要查找的學生姓名: ";
 	cin >> name;
-	for (int i = 0;i < students.size(); i++) {
+	for (int i = 0; i < students.size(); i++) {
 		if (students[i].getName() == name) {
-			cout << students[i].getName()<< " ";
+			cout << students[i].getName() << " ";
 			cout << students[i].getID() << " ";
 			cout << students[i].getEnglish() << " ";
 			cout << students[i].getMath() << endl;
@@ -53,7 +50,6 @@ void StudentManage::FindStudent() {
 
 }
 
-//修改學生
 void StudentManage::ModifyStudent() {
 	bool find = false;
 	string name, id;
@@ -78,7 +74,6 @@ void StudentManage::ModifyStudent() {
 	}
 }
 
-//刪除學生
 void StudentManage::DeleteStudent() {
 	bool find = false;
 	string name;
@@ -87,7 +82,7 @@ void StudentManage::DeleteStudent() {
 	cin >> name;
 	for (int i = 0; i < students.size(); i++) {
 		if (students[i].getName() == name) {
-			students.erase(students.begin()+i);
+			students.erase(students.begin() + i);
 			cout << "學生 " << name << " 已刪除。" << endl;
 			find = true;
 		}
@@ -96,7 +91,7 @@ void StudentManage::DeleteStudent() {
 		cout << "系統沒有需要刪除的學生!" << endl;
 	}
 }
-void StudentManage::SortStudent(){
+void StudentManage::SortStudent() {
 	sort(students.begin(), students.end(), [](Student a, Student b) {return a.getSum() > b.getSum(); });
 }
 void StudentManage::DisplayAllStudent() {
@@ -124,8 +119,8 @@ void StudentManage::DisplayAllStudent() {
 	}
 	cout << endl;
 }
-void StudentManage::SaveData(){
-	fstream file(filename,ios::out);
+void StudentManage::SaveData() {
+	fstream file(filename, ios::out);
 	if (file.is_open()) {
 		for (int i = 0; i < 72; i++) {
 			file << "-";
@@ -158,7 +153,7 @@ void StudentManage::SaveData(){
 		cout << "無法開啟文件！" << endl;
 	}
 }
-void StudentManage::Run(){
+void StudentManage::Run() {
 	cout << "-------------歡迎來到成績管理系統-----------------" << endl;
 	while (true) {
 		cout << "請選擇你想要的操作:" << endl;
