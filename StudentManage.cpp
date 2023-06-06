@@ -19,6 +19,8 @@ StudentManage::StudentManage(string fname){
 		file.close();
 	}
 }
+
+//增加學生
 void StudentManage::AddStudent() {
 	cout << "請輸入要增加的學生姓名、學號、數學成績、英文成績:";
 	string name, id;
@@ -29,7 +31,7 @@ void StudentManage::AddStudent() {
 	cout << "學生 " << name << " 已添加。"<<endl;
 }
 
-
+//查詢學生
 void StudentManage::FindStudent() {
 	bool find = false;
 	string name;
@@ -51,6 +53,7 @@ void StudentManage::FindStudent() {
 
 }
 
+//修改學生
 void StudentManage::ModifyStudent() {
 	bool find = false;
 	string name, id;
@@ -75,6 +78,7 @@ void StudentManage::ModifyStudent() {
 	}
 }
 
+//刪除學生
 void StudentManage::DeleteStudent() {
 	bool find = false;
 	string name;
