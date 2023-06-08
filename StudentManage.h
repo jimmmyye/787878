@@ -8,7 +8,7 @@
 #include<iostream>
 #include "Student.h"
 using namespace std;
-class StudentManage {
+class StudentManage{
 private:
 	vector <Student> students;
 	string filename;
@@ -22,6 +22,6 @@ public:
 	void DisplayAllStudent();
 	void SaveData();
 	void Run();
-
+	
 };
 #endif

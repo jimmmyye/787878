@@ -1,16 +1,16 @@
 #include "StudentManage.h"
-StudentManage::StudentManage(string fname) {
+StudentManage::StudentManage(string fname){
 	filename = fname;
-	fstream file(filename, ios::in);
+	fstream file(filename,ios::in);
 	if (file.is_open()) {
-		string line, wh, eline;
+		string line, wh,eline;
 		getline(file, line);
 		getline(file, wh);
 		char s;
 		string name, id;
-		int math, english, rank;
+		int math, english,rank;
 		int sum;
-		while (file >> s >> name >> s >> id >> s >> math >> s >> english >> s >> sum >> s >> rank >> s) {
+		while (file >> s >> name >> s >> id >> s >> math >> s >> english >> s >> sum >> s >>rank >> s) {
 			Student s(name, id, math, english);
 			students.push_back(s);
 		}
@@ -19,24 +19,24 @@ StudentManage::StudentManage(string fname) {
 	}
 }
 void StudentManage::AddStudent() {
-	cout << "è«‹è¼¸å…¥è¦å¢žåŠ çš„å­¸ç”Ÿå§“åã€å­¸è™Ÿã€æ•¸å­¸æˆç¸¾ã€è‹±æ–‡æˆç¸¾:";
+	cout << "½Ð¿é¤J­n¼W¥[ªº¾Ç¥Í©m¦W¡B¾Ç¸¹¡B¼Æ¾Ç¦¨ÁZ¡B­^¤å¦¨ÁZ:";
 	string name, id;
 	int MathScore, EnglishScore;
 	cin >> name >> id >> MathScore >> EnglishScore;
 	Student stu(name, id, MathScore, EnglishScore);
 	students.push_back(stu);
-	cout << "å­¸ç”Ÿ " << name << " å·²æ·»åŠ ã€‚" << endl;
+	cout << "¾Ç¥Í " << name << " ¤w²K¥[¡C"<<endl;
 }
 
 
 void StudentManage::FindStudent() {
 	bool find = false;
 	string name;
-	cout << "è«‹è¼¸å…¥è¦æŸ¥æ‰¾çš„å­¸ç”Ÿå§“å: ";
+	cout << "½Ð¿é¤J­n¬d§äªº¾Ç¥Í©m¦W: ";
 	cin >> name;
-	for (int i = 0; i < students.size(); i++) {
+	for (int i = 0;i < students.size(); i++) {
 		if (students[i].getName() == name) {
-			cout << students[i].getName() << " ";
+			cout << students[i].getName()<< " ";
 			cout << students[i].getID() << " ";
 			cout << students[i].getEnglish() << " ";
 			cout << students[i].getMath() << endl;
@@ -45,7 +45,7 @@ void StudentManage::FindStudent() {
 		}
 	}
 	if (!find) {
-		cout << "æœªæ‰¾åˆ°è©²å­¸ç”Ÿ!" << endl;
+		cout << "¥¼§ä¨ì¸Ó¾Ç¥Í!" << endl;
 	}
 
 }
@@ -55,22 +55,22 @@ void StudentManage::ModifyStudent() {
 	string name, id;
 	int MathScore, EnglishScore;
 
-	cout << "è«‹è¼¸å…¥è¦ä¿®æ”¹çš„å­¸ç”Ÿå§“å: ";
+	cout << "½Ð¿é¤J­n­×§ïªº¾Ç¥Í©m¦W: ";
 	cin >> name;
 	for (int i = 0; i < students.size(); i++) {
 		if (students[i].getName() == name) {
-			cout << "è«‹è¼¸å…¥è¦ä¿®æ”¹çš„å­¸ç”Ÿå§“åã€å­¸è™Ÿã€æ•¸å­¸æˆç¸¾ã€è‹±æ–‡æˆç¸¾:";
+			cout << "½Ð¿é¤J­n­×§ïªº¾Ç¥Í©m¦W¡B¾Ç¸¹¡B¼Æ¾Ç¦¨ÁZ¡B­^¤å¦¨ÁZ:";
 			cin >> name >> id >> MathScore >> EnglishScore;
 			students[i].setName(name);
 			students[i].setID(id);
 			students[i].setMath(MathScore);
 			students[i].setEnglish(EnglishScore);
-			cout << "å­¸ç”Ÿ: " << students[i].getName() << "å·²ä¿®æ”¹ã€‚" << endl;
+			cout << "¾Ç¥Í: " << students[i].getName() << "¤w­×§ï¡C" << endl;
 			find = true;
 		}
 	}
 	if (!find) {
-		cout << "ç³»çµ±æ²’æœ‰éœ€è¦ä¿®æ”¹çš„å­¸ç”Ÿ!" << endl;
+		cout << "¨t²Î¨S¦³»Ý­n­×§ïªº¾Ç¥Í!" << endl;
 	}
 }
 
@@ -78,20 +78,20 @@ void StudentManage::DeleteStudent() {
 	bool find = false;
 	string name;
 
-	cout << "è«‹è¼¸å…¥è¦åˆªé™¤çš„å­¸ç”Ÿå§“å: ";
+	cout << "½Ð¿é¤J­n§R°£ªº¾Ç¥Í©m¦W: ";
 	cin >> name;
 	for (int i = 0; i < students.size(); i++) {
 		if (students[i].getName() == name) {
-			students.erase(students.begin() + i);
-			cout << "å­¸ç”Ÿ " << name << " å·²åˆªé™¤ã€‚" << endl;
+			students.erase(students.begin()+i);
+			cout << "¾Ç¥Í " << name << " ¤w§R°£¡C" << endl;
 			find = true;
 		}
 	}
 	if (!find) {
-		cout << "ç³»çµ±æ²’æœ‰éœ€è¦åˆªé™¤çš„å­¸ç”Ÿ!" << endl;
+		cout << "¨t²Î¨S¦³»Ý­n§R°£ªº¾Ç¥Í!" << endl;
 	}
 }
-void StudentManage::SortStudent() {
+void StudentManage::SortStudent(){
 	sort(students.begin(), students.end(), [](Student a, Student b) {return a.getSum() > b.getSum(); });
 }
 void StudentManage::DisplayAllStudent() {
@@ -99,12 +99,12 @@ void StudentManage::DisplayAllStudent() {
 		cout << "-";
 	}
 	cout << endl;
-	cout << "|" << setw(10) << left << " å§“å ";
-	cout << "|" << setw(16) << left << "å­¸è™Ÿ";
-	cout << "|" << setw(10) << left << "æ•¸å­¸";
-	cout << "|" << setw(10) << left << "è‹±æ–‡";
-	cout << "|" << setw(10) << left << "ç¸½åˆ†";
-	cout << "|" << setw(10) << left << "æŽ’å" << setw(4) << "|";
+	cout << "|" << setw(10) << left << " ©m¦W ";
+	cout << "|" << setw(16) << left << "¾Ç¸¹";
+	cout << "|" << setw(10) << left << "¼Æ¾Ç";
+	cout << "|" << setw(10) << left << "­^¤å";
+	cout << "|" << setw(10) << left << "Á`¤À";
+	cout << "|" << setw(10) << left << "±Æ¦W" << setw(4) << "|";
 	cout << endl;
 	for (int i = 0; i < students.size(); i++) {
 		cout << "|" << setw(10) << left << students[i].getName();
@@ -119,19 +119,19 @@ void StudentManage::DisplayAllStudent() {
 	}
 	cout << endl;
 }
-void StudentManage::SaveData() {
-	fstream file(filename, ios::out);
+void StudentManage::SaveData(){
+	fstream file(filename,ios::out);
 	if (file.is_open()) {
 		for (int i = 0; i < 72; i++) {
 			file << "-";
 		}
 		file << endl;
-		file << "|" << setw(11) << left << "å§“å";
-		file << "|" << setw(16) << left << "å­¸è™Ÿ";
-		file << "|" << setw(10) << left << "æ•¸å­¸";
-		file << "|" << setw(10) << left << "è‹±æ–‡";
-		file << "|" << setw(10) << left << "ç¸½åˆ†";
-		file << "|" << setw(10) << left << "æŽ’å" << setw(4) << "|";
+		file << "|" << setw(11) << left << "©m¦W";
+		file << "|" << setw(16) << left << "¾Ç¸¹";
+		file << "|" << setw(10) << left << "¼Æ¾Ç";
+		file << "|" << setw(10) << left << "­^¤å";
+		file << "|" << setw(10) << left << "Á`¤À";
+		file << "|" << setw(10) << left << "±Æ¦W" << setw(4) << "|";
 		file << endl;
 		for (int i = 0; i < students.size(); i++) {
 			file << "|" << setw(10) << left << students[i].getName();
@@ -146,23 +146,24 @@ void StudentManage::SaveData() {
 		}
 		file << endl;
 
-		cout << "å·²ä¿å­˜ " << students.size() << " åå­¸ç”Ÿè³‡æ–™ã€‚" << endl;
+		cout << "¤w«O¦s " << students.size() << " ¦W¾Ç¥Í¸ê®Æ¡C" << endl;
 		file.close();
 	}
 	else {
-		cout << "ç„¡æ³•é–‹å•Ÿæ–‡ä»¶ï¼" << endl;
+		cout << "µLªk¶}±Ò¤å¥ó¡I" << endl;
 	}
 }
-void StudentManage::Run() {
-	cout << "-------------æ­¡è¿Žä¾†åˆ°æˆç¸¾ç®¡ç†ç³»çµ±-----------------" << endl;
+void StudentManage::Run(){
+	cout << "-------------Åwªï¨Ó¨ì¦¨ÁZºÞ²z¨t²Î-----------------" << endl;
+	// ¶i¤JµL­­´`Àô¡Aª½¨ì¥Î¤á¿ï¾Ü°h¥X¨t²Î
 	while (true) {
-		cout << "è«‹é¸æ“‡ä½ æƒ³è¦çš„æ“ä½œ:" << endl;
-		cout << "1.å¢žåŠ å­¸ç”Ÿ:" << endl;
-		cout << "2.æŸ¥è©¢å­¸ç”Ÿ:" << endl;
-		cout << "3.ä¿®æ”¹å­¸ç”Ÿ:" << endl;
-		cout << "4.åˆªé™¤å­¸ç”Ÿ:" << endl;
-		cout << "5.é¡¯ç¤ºå­¸ç”Ÿ:" << endl;
-		cout << "6.é€€å‡ºç³»çµ±:" << endl;
+		cout << "½Ð¿ï¾Ü§A·Q­nªº¾Þ§@:" << endl;
+		cout << "1.¼W¥[¾Ç¥Í:" << endl;
+		cout << "2.¬d¸ß¾Ç¥Í:" << endl;
+		cout << "3.­×§ï¾Ç¥Í:" << endl;
+		cout << "4.§R°£¾Ç¥Í:" << endl;
+		cout << "5.Åã¥Ü¾Ç¥Í:" << endl;
+		cout << "6.°h¥X¨t²Î:" << endl;
 		int choice;
 		cin >> choice;
 		switch (choice) {
@@ -179,12 +180,12 @@ void StudentManage::Run() {
 			DeleteStudent();
 			break;
 		case 5:
-			SortStudent();
+			SortStudent(); // ±Æ§Ç¾Ç¥Í
 			DisplayAllStudent();
 			break;
 		case 6:
-			SaveData();
-			return;
+			SaveData(); // «O¦s¼Æ¾Ú
+			return; // °h¥X¨t²Î
 			break;
 		default:
 			break;
